@@ -45,6 +45,7 @@ DEPENDENCIES
   haml
   nokogiri
   puma
+  rack-test
   rake
   sass
   sinatra

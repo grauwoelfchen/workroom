@@ -1,0 +1,6 @@
+/.bundle
+/.env
+/tmp/*
+/.sass-cache
+
+/bin/workroom

@@ -1,5 +1,7 @@
 # Workroom
 
+![build](https://gitlab.com/grauwoelfchen/workroom/badges/master/build.svg)
+
 [Grauwoelfchen's Wookroom](https://grauwoelfchen.net/)
 
 ## Setup

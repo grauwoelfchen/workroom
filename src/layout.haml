@@ -1,0 +1,29 @@
+!!! XML
+!!! Strict
+%html
+  %head
+    %title Grauwoelfchen's Workroom
+    %meta(content="text/html" charset="utf-8")
+    %link(rel="stylesheet" type="text/css" href="stylesheet.css")
+  %body
+    #header
+      %h1 Grauwoelfchen's Workroom
+      %ul.navi
+        %li
+          %a(title="Home" href="/") Home
+        %li
+          %a(title="About" href="/about") About
+        %li
+          %a(title="Software" href="/software") Software
+        %li
+          %a(title="Link" href="/link") Link
+    #content
+      = yield
+    #footer
+      #copyright
+        Copyright 2014 - 2016
+        %a(title="About" href="/about")
+          Yasuhiro Asaka
+        ,&nbsp;
+        %a(title="License" href="https://gitlab.com/grauwoelfchen/workroom/LICENSE")
+          AGPL

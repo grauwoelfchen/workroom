@@ -1,0 +1,21 @@
+before_script:
+- ruby -v
+- which ruby
+- gem install bundler --no-ri --no-rdoc
+- bundle install --without development --path /vendor --jobs $(nproc)
+
+variables:
+  RACK_ENV: test
+
+stages:
+- test
+
+test:
+  script:
+  - bundle exec foreman run rake test
+  cache:
+    untracked: true
+    paths:
+    - vendor/
+  only:
+  - master

@@ -1,9 +1,4 @@
-ENV['RACK_ENV'] = 'test'
-
 require 'test_helper'
-
-app_dir = File.expand_path('../../', __FILE__)
-require app_dir + '/app'
 
 class AppTest < Test::Unit::TestCase
   include Rack::Test::Methods
@@ -15,7 +10,7 @@ class AppTest < Test::Unit::TestCase
   must('return status 200') do
     get('/')
     assert(last_response.ok?)
-    assert_equal 200, last_response.status
+    assert_equal(200, last_response.status)
   end
 
   must('have a title') do

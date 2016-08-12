@@ -8,6 +8,6 @@ environment app_env
 threads 0, 16
 workers 0
 pidfile "#{app_dir}/tmp/pids/workroom.pid"
-bind "unix:///#{app_dir}/tmp/sockets/wookroom.sock"
+bind "unix:///#{app_dir}/tmp/sockets/workroom.sock"
 stdout_redirect "#{app_dir}/tmp/logs/#{app_env}.log"
 preload_app!

@@ -30,7 +30,7 @@ See `Procfile`
 
 ## License
 
-Copyright (C) 2014-2016 Yasuhiro Asaka
+Copyright (C) 2014-2017 Yasuhiro Asaka
 
 This is free software;
 You can redistribute it and/or modify it under the terms of the GNU Affero General Public License (AGPL).

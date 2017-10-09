@@ -37,10 +37,7 @@ See `Procfile`
 
 ## License
 
-```
-Workroom
-Copyright (C) 2014-2017 Yasuhiro Asaka
-```
+This project is distributed as multiple licenses by parts.
 
 ### Contents (text, image)
 
@@ -80,6 +77,12 @@ along with this program. If not, see <https://www.gnu.org/licenses/>
 ```
 
 See [LICENSE](LICENSE).
+
+
+```
+Workroom
+Copyright (C) 2014-2017 Yasuhiro Asaka
+```
 
 
 [pipeline]: https://gitlab.com/grauwoelfchen/workroom/badges/master/pipeline.svg

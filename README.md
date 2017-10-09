@@ -66,5 +66,5 @@ See [LICENSE](LICENSE).
 
 [pipeline]: https://gitlab.com/grauwoelfchen/workroom/badges/master/pipeline.svg
 [commit]: https://gitlab.com/grauwoelfchen/workroom/commits/master
-[photo]: https://dl.grauwoelfchen.net/_shared/photo/20171010/workroom-300x245-20171010.jpg
+[photo]: public/img/workroom-300x245-20171010.jpg
 [workroom]: https://grauwoelfchen.net/

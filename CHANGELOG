@@ -1,5 +1,8 @@
-07 Oct 2017; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+10 Oct 2017; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Update README.md (add new photo)
+	* Add a helper for link state class
+	* Update software, about and link
+	* Update explanation about LICENSE
 
 01 Oct 2017; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Update about software and link

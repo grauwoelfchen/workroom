@@ -16,6 +16,13 @@ class Workroom < Sinatra::Base
     end
   end
 
+  helpers do
+    def link_class_for(path)
+      return 'active' if request.path == path
+      ''
+    end
+  end
+
   get '/' do
     haml :index
   end

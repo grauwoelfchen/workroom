@@ -10,13 +10,13 @@
       %h1 Grauwoelfchen's Workroom
       %ul.navi
         %li
-          %a(title="Home" href="/") Home
+          %a(title="Home" href="/" class="#{link_class_for('/')}") Home
         %li
-          %a(title="About" href="/about") About
+          %a(title="About" href="/about" class="#{link_class_for('/about')}") About
         %li
-          %a(title="Software" href="/software") Software
+          %a(title="Software" href="/software" class="#{link_class_for('/software')}") Software
         %li
-          %a(title="Link" href="/link") Link
+          %a(title="Link" href="/link" class="#{link_class_for('/link')}") Link
     #content
       = yield
     #footer
@@ -29,7 +29,7 @@
         &nbsp;+&nbsp;
         %a(title="License" href="https://gitlab.com/grauwoelfchen/workroom/blob/master/README.md")
           GFDL-1.3
-        ,&nbsp;
+        ,
         Copyright &copy; 2014 - 2017
         %a(title="About" href="/about")
           Yasuhiro Asaka

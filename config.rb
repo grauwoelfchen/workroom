@@ -1,7 +1,11 @@
 # puma config file
 
-app_dir = ENV['APP_DIR']
-app_env = ENV['RACK_ENV'] || 'development'
+env_values = ['production', 'development']
+
+app_dir = File.expand_path(__dir__)
+
+app_env = ENV['RACK_ENV']
+app_env = 'development' unless env_values.include?(app_env)
 
 daemonize true
 environment app_env

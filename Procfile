@@ -1,1 +1,1 @@
-develp: puma -p $PORT
+develp: puma -p ${PORT:-5000}

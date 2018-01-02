@@ -1,3 +1,9 @@
+02 Jan 2018; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+	* Update Ruby 2.5.0
+	* Update software, about
+	* Fix image src path
+	* Remove APP_DIR env
+
 10 Oct 2017; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Update README.md (add new photo)
 	* Add a helper for link state class

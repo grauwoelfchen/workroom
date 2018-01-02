@@ -81,7 +81,7 @@ See [LICENSE](LICENSE).
 
 ```
 Workroom
-Copyright (C) 2014-2017 Yasuhiro Asaka
+Copyright (C) 2014-2018 Yasuhiro Asaka
 ```
 
 

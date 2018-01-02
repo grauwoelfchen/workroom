@@ -1,21 +1,23 @@
+image: ruby:2.4.1
+
 before_script:
-- ruby -v
-- which ruby
-- gem install bundler --no-ri --no-rdoc
-- bundle install --without development --path ./vendor --jobs $(nproc)
+  - ruby -v
+  - which ruby
+  - gem install bundler --no-ri --no-rdoc
+  - bundle install --without development --path ./vendor --jobs $(nproc)
 
 variables:
   RACK_ENV: test
 
 stages:
-- test
+  - test
 
 test:
   script:
-  - bundle exec foreman run rake test
+    - bundle exec foreman run rake test
   cache:
     untracked: true
     paths:
-    - vendor/
+      - vendor/
   only:
-  - master
+    - master

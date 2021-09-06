@@ -77,5 +77,5 @@ Copyright (C) 2014-2021 Yasuhiro Яша Asaka
 
 [pipeline]: https://gitlab.com/grauwoelfchen/workroom/badges/trunk/pipeline.svg
 [commit]: https://gitlab.com/grauwoelfchen/workroom/commits/trunk
-[photo]: public/img/workroom-300x245-20171010.jpg
+[photo]: dst/img/workroom-300x245-20171010.jpg
 [workroom]: https://grauwoelfchen.net/

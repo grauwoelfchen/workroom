@@ -1,23 +1,98 @@
-image: ruby:2.5.0
-
-before_script:
-  - ruby -v
-  - which ruby
-  - gem install bundler --no-ri --no-rdoc
-  - bundle install --without development --path ./vendor --jobs $(nproc)
-
-variables:
-  RACK_ENV: test
-
 stages:
+  - vet
   - test
+  - build
+  # - pages
+
+.vet-tools: &vet-tools
+  image: grauwoelfchen/rust-vet-tools:stable
+  except:
+    - tags
+
+check:
+  stage: vet
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
+  script:
+    - make vet:check
+
+fmt:
+  stage: vet
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - cargo fmt --version
+    - mkdir -p .git/hooks
+  script:
+    - make vet:format
+
+lint:
+  stage: vet
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - cargo clippy --version
+    - mkdir -p .git/hooks
+  script:
+    - make vet:lint
 
 test:
+  stage: test
+  <<: *vet-tools
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
   script:
-    - bundle exec foreman run rake test
+    - make test
+  only:
+    - trunk
+    - merge_requests
+
+build:
+  stage: build
+  image: grauwoelfchen/rust:stable
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
+  script:
+    - make build:debug
   cache:
     untracked: true
-    paths:
-      - vendor/
   only:
-    - master
+    - trunk
+    - merge_requests
+
+release:
+  stage: build
+  image: grauwoelfchen/rust:stable
+  before_script:
+    - rustc --version
+    - cargo --version
+    - mkdir -p .git/hooks
+  script:
+    - make build:release
+  cache:
+    untracked: true
+  only:
+    - trunk
+
+# pages:
+#   stage: pages
+#   script:
+#     - cargo run
+#     - rm -fr public && mkdir -p public
+#     - cp -R dst/* public/
+#     - hash=$(md5sum public/style.min.css | cut -d ' ' -f 1)
+#     - mv public/style.min{,.$hash}.css
+#     - sed "s/\.css/\.min\.${hash}\0/" -i public/index.html
+#   artifacts:
+#     untracked: true
+#     paths:
+#       - public

@@ -4,34 +4,24 @@
 
 [![Grauwoelfchen's Workroom][photo]][workroom]
 
-
 The website of [Grauwoelfchen's Wookroom][workroom].
 
 
 ## Setup
 
 ```zsh
-% ruby --version
-ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
-
-% cp .env.sample .env
-% bundle install --path .bundle/gems
+# use stable
+% rustc --version
+rustc 1.54.0 (a178d0322 2021-07-26)
 ```
 
-
-## Development
-
-See `Procfile`
+## Build
 
 ```zsh
-% bundle exec foreman start develp
-```
+% make
+% ./target/release/workroom
 
-
-## Test
-
-```zsh
-% bundle exec foreman run rake test
+% xdg-open dst/index.html
 ```
 
 
@@ -81,11 +71,11 @@ See [LICENSE](LICENSE).
 
 ```
 Workroom
-Copyright (C) 2014-2018 Yasuhiro Asaka
+Copyright (C) 2014-2021 Yasuhiro Яша Asaka
 ```
 
 
-[pipeline]: https://gitlab.com/grauwoelfchen/workroom/badges/master/pipeline.svg
-[commit]: https://gitlab.com/grauwoelfchen/workroom/commits/master
+[pipeline]: https://gitlab.com/grauwoelfchen/workroom/badges/trunk/pipeline.svg
+[commit]: https://gitlab.com/grauwoelfchen/workroom/commits/trunk
 [photo]: public/img/workroom-300x245-20171010.jpg
 [workroom]: https://grauwoelfchen.net/

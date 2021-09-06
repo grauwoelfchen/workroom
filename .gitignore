@@ -1,4 +1,4 @@
-/.bundle
-/.env
-/tmp/*
-/.sass-cache
+/dst/**/*.html
+/bin
+
+/target

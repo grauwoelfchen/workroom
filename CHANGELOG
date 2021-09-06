@@ -1,21 +1,25 @@
-02 Jan 2018; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+07 Sep 2021; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+	* Migrate to a static site by using Rust
+	* Convert Haml to Handlebars
+
+02 Jan 2018; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Update Ruby 2.5.0
 	* Update software, about
 	* Fix image src path
 	* Remove APP_DIR env
 
-10 Oct 2017; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+10 Oct 2017; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Update README.md (add new photo)
 	* Add a helper for link state class
 	* Update software, about and link
 	* Update explanation about LICENSE
 
-01 Oct 2017; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+01 Oct 2017; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Update about software and link
 	* Rename ChangeLog as CHANGELOG (Update also format)
 
-08 Dec 2016; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+08 Dec 2016; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Update about page, style and rubygems
 
-11 Aug 2016; Yasuhiro Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+11 Aug 2016; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
 	* Initial release as 0.0.1

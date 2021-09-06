@@ -1,0 +1,17 @@
+[package]
+name = "workroom"
+version = "0.0.1"
+authors = ["Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>"]
+description = "The website of https://grauwoelfchen.net"
+documentation = "https://gitlab.com/grauwoelfchen/workroom"
+repository = "https://gitlab.com/grauwoelfchen/workroom"
+homepage = "https://gitlab.com/grauwoelfchen/workroom"
+readme = "README.md"
+keywords = []
+categories = []
+license = "AGPL-3.0"
+edition = "2018"
+
+[dependencies]
+handlebars = "4.1.2"
+

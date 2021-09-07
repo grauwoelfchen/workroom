@@ -10,9 +10,9 @@ const DST_DIR: &str = "./dst";
 
 const LINKS: [(&str, &str); 4] = [
     ("Home", "/"),
-    ("About", "/about"),
-    ("Software", "/software"),
-    ("Link", "/link"),
+    ("About", "/about.html"),
+    ("Software", "/software.html"),
+    ("Link", "/link.html"),
 ];
 
 #[derive(Debug)]
@@ -83,17 +83,22 @@ fn load(heading: &str, content: &str) -> BTreeMap<String, String> {
 
     let mut nav = "".to_string();
     for link in LINKS {
-        let class = if link.0 == heading {
+        let title = link.0;
+        let href = link.1;
+
+        let class = if title == heading {
             "active"
         } else {
             ""
         };
-        let n = format!(
-            "<li title=\"{}\" href=\"{}\" class=\"{}\">{}</li>",
-            link.0,
-            link.1,
+        let n = format!(r#"
+<li title="{}" class="{}">
+  <a href="{}">{}</a>
+</li>"#,
+            title,
             class,
-            link.0,
+            href,
+            title,
         );
         nav = format!("{}{}", &nav, &n);
     }

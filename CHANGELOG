@@ -1,4 +1,5 @@
 07 Sep 2021; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+	* Convert SASS to CSS (style.css)
 	* Migrate to a static site by using Rust
 	* Convert Haml to Handlebars
 

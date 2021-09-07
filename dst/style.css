@@ -1,168 +1,165 @@
-= img_style
-  vertical-align: middle
-  border: 3px solid #d3d3d3
-  margin: 2px 0
+body {
+  color: #404040;
+  font-family: helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.25;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0; }
 
-= link_style
-  color: #56534f
-  margin: 0
-  outline: 0
-  &::-moz-focus-inner
-    outline: 0
-  &.active
-    text-decoration: none
-    font-weight: bold
+img {
+  vertical-align: middle;
+  border: 3px solid #d3d3d3;
+  margin: 2px 0; }
 
-= font_family
-  font-family: "monaco", "andale mono", "bitstream vera sans mono"
-  font-weight: normal
+a {
+  color: #56534f;
+  margin: 0;
+  outline: 0; }
+  a::-moz-focus-inner {
+    outline: 0; }
+  a.active {
+    text-decoration: none;
+    font-weight: bold; }
 
-body
-  color: #404040
-  font-family: helvetica, sans-serif
-  font-size: 100%
-  line-height: 1.25
-  background-color: #ffffff
-  margin: 0
-  padding: 0
-img
-  +img_style
-a
-  +link_style
 code,
 pre,
-textarea
-  +font_family
-pre
-  font-size: 0.85em
-  background: #f5f5f5
-  border: 1px solid #d5d0d2
-  padding: 10px
-  line-height: 1.15
-  color: #111111
-code
-  font-size: 0.85em
-  color: #222222
+textarea {
+  font-family: "monaco", "andale mono", "bitstream vera sans mono";
+  font-weight: normal; }
 
-#header
-  border-bottom: 1px solid #d5d3d2
-  padding-top: 6px
-  h1
-    color: #000000
-    font-family: georgia, "bitstream vera serif", serif
-    font-size: 2.8em
-    font-weight: normal
-    letter-spacing: -2px
-    line-height: 1
-    margin: 0
-    padding: 9px 0 13px 13px
-  ul.navi
-    +font_family
-    font-size: 1.1em
-    text-transform: uppercase
-    letter-spacing: 2px
-    margin: 0
-    padding: 0 40px 13px 18px
-    li
-      display: inline
-      list-style-type: none
-      padding: 0 1px
-      a
-        &:hover
-          color: #000000
+pre {
+  font-size: 0.85em;
+  background: #f5f5f5;
+  border: 1px solid #d5d0d2;
+  padding: 10px;
+  line-height: 1.15;
+  color: #111111; }
 
-#content
-  padding: 5px 18px
-  .main
-    margin-left: 1px
-  h2
-    width: 125px
-    border-bottom: 3px solid #cccccc
-    padding: 0 0 2px 2px
-    margin: 13px 0 21px 0
-  h3
-    font-weight: normal
-    min-width: 125px
-    max-width: 50%
-    border-bottom: 1px dashed #cccccc
-    padding: 0 0 2px 2px
-    margin: 18px 0 21px 0
-  a
-    &:hover
-      color: #000000
-  span.caption
-    color: #808080
-    display: block
-    margin: 1px 2px 13px 2px
-    font-size: 0.8em
-  ul.info
-    padding-left: 0
-    list-style: none
-    span
-      margin: 0 4px
-  ul.note,
-  ul.link
-    padding-left: 17px
-    li
-      ul
-        font-size: 0.9em
-        list-style: none
-        padding: 0
-        margin: 4px 0 9px 2px
-      code
-        display: block
-        padding: 0.18rem 0
-        font-size: 0.8em
-        color: #888888
-      .url
-        display: inline-block
-        margin: 0 0 0 0.382rem
-        font-size: 0.8em
-        color: #838383
-      p
-        padding: 0
-        margin: 1px 0
-  ul.note
-    margin: 4px 0
+code {
+  font-size: 0.85em;
+  color: #222222; }
 
-#footer
-  border-top: 1px solid #d5d3d2
-  #status, #copyright
-    font-size: 0.85em
-    padding: 13px 0 0 0
-    margin-left: 23px
-  #copyright
-    margin-top: 4px
-    margin-bottom: 19px
-    .license
-      display: inline-block
-      margin-right: 0.39rem
-    .author
-      display: inline-block
-      margin-left: 0.21rem
+#header {
+  border-bottom: 1px solid #d5d3d2;
+  padding-top: 6px; }
+  #header h1 {
+    color: #000000;
+    font-family: georgia, "bitstream vera serif", serif;
+    font-size: 2.8em;
+    font-weight: normal;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0;
+    padding: 9px 0 13px 13px; }
+  #header ul.navi {
+    font-family: "monaco", "andale mono", "bitstream vera sans mono";
+    font-weight: normal;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0 40px 13px 18px; }
+    #header ul.navi li {
+      display: inline;
+      list-style-type: none;
+      padding: 0 1px; }
+      #header ul.navi li a:hover {
+        color: #000000; }
 
-span.label
-  display: inline-block
-  border: 1px solid
-  border-radius: 0.2rem
-  padding: 0 0.64rem
-  margin: 0 0 0 0.489rem
-  &.pypi
-    border-color: #3d79aa
-    background-color: #3d79aa
-  &.npm
-    border-color: #cb0000
-    background-color: #cb0000
-  &.gem
-    border-color: #e9573f
-    background-color: #e9573f
+#content {
+  padding: 5px 18px; }
+  #content .main {
+    margin-left: 1px; }
+  #content h2 {
+    width: 125px;
+    border-bottom: 3px solid #cccccc;
+    padding: 0 0 2px 2px;
+    margin: 13px 0 21px 0; }
+  #content h3 {
+    font-weight: normal;
+    min-width: 125px;
+    max-width: 50%;
+    border-bottom: 1px dashed #cccccc;
+    padding: 0 0 2px 2px;
+    margin: 18px 0 21px 0; }
+  #content a:hover {
+    color: #000000; }
+  #content span.caption {
+    color: #808080;
+    display: block;
+    margin: 1px 2px 13px 2px;
+    font-size: 0.8em; }
+  #content ul.info {
+    padding-left: 0;
+    list-style: none; }
+    #content ul.info span {
+      margin: 0 4px; }
+  #content ul.note,
+  #content ul.link {
+    padding-left: 17px; }
+    #content ul.note li ul,
+    #content ul.link li ul {
+      font-size: 0.9em;
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 9px 2px; }
+    #content ul.note li code,
+    #content ul.link li code {
+      display: block;
+      padding: 0.18rem 0;
+      font-size: 0.8em;
+      color: #888888; }
+    #content ul.note li .url,
+    #content ul.link li .url {
+      display: inline-block;
+      margin: 0 0 0 0.382rem;
+      font-size: 0.8em;
+      color: #838383; }
+    #content ul.note li p,
+    #content ul.link li p {
+      padding: 0;
+      margin: 1px 0; }
+  #content ul.note {
+    margin: 4px 0; }
 
-  a, a:hover
-    color: white !important
-  a
-    padding: 0
-    margin: 0
-    font-weight: bold
-    font-size: 0.67em
-    text-decoration: none
-    vertical-align: 0.186em
+#footer {
+  border-top: 1px solid #d5d3d2; }
+  #footer #status, #footer #copyright {
+    font-size: 0.85em;
+    padding: 13px 0 0 0;
+    margin-left: 23px; }
+  #footer #copyright {
+    margin-top: 4px;
+    margin-bottom: 19px; }
+    #footer #copyright .license {
+      display: inline-block;
+      margin-right: 0.39rem; }
+    #footer #copyright .author {
+      display: inline-block;
+      margin-left: 0.21rem; }
+
+span.label {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 0.2rem;
+  padding: 0 0.64rem;
+  margin: 0 0 0 0.489rem; }
+  span.label.pypi {
+    border-color: #3d79aa;
+    background-color: #3d79aa; }
+  span.label.npm {
+    border-color: #cb0000;
+    background-color: #cb0000; }
+  span.label.gem {
+    border-color: #e9573f;
+    background-color: #e9573f; }
+  span.label a, span.label a:hover {
+    color: white !important; }
+  span.label a {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.67em;
+    text-decoration: none;
+    vertical-align: 0.186em; }

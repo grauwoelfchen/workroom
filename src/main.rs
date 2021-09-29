@@ -110,6 +110,8 @@ fn build_nav(heading: &str, link: &Link) -> String {
     )
 }
 
+/// Loads the content as a BTreeMap object that has navi, content
+/// {page,site}_title as attributes.
 fn load(heading: &str, content: &str) -> BTreeMap<String, String> {
     let mut data = BTreeMap::new();
 

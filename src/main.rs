@@ -78,29 +78,31 @@ fn main() -> Result<(), Error> {
     Ok(())
 }
 
+/// Returns built an entry for navigations list.
+fn build_nav(heading: &str, link: (&str, &str)) -> String {
+    let title = link.0;
+    let href = link.1;
+
+    let class = if title == heading {
+        " class=\"active\""
+    } else {
+        ""
+    };
+    format!(r#"<li{}>
+  <a href="{}">{}</a>
+</li>"#,
+        class,
+        href,
+        title,
+    )
+}
+
 fn load(heading: &str, content: &str) -> BTreeMap<String, String> {
     let mut data = BTreeMap::new();
 
     let mut nav = "".to_string();
     for link in LINKS {
-        let title = link.0;
-        let href = link.1;
-
-        let class = if title == heading {
-            "active"
-        } else {
-            ""
-        };
-        let n = format!(r#"
-<li title="{}" class="{}">
-  <a href="{}">{}</a>
-</li>"#,
-            title,
-            class,
-            href,
-            title,
-        );
-        nav = format!("{}{}", &nav, &n);
+        nav.push_str(&build_nav(heading, link));
     }
     data.insert("navi".to_string(), nav);
     data.insert("content".to_string(), content.to_string());
@@ -111,4 +113,22 @@ fn load(heading: &str, content: &str) -> BTreeMap<String, String> {
     }
     data.insert("site_title".to_string(), SITE_TITLE.to_string());
     data
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_build_nav() {
+        let active = build_nav("Foo", ("Foo", "/foo.html"));
+        assert_eq!(active, r#"<li class="active">
+  <a href="/foo.html">Foo</a>
+</li>"#);
+
+        let inactive = build_nav("Bar", ("Foo", "/foo.html"));
+        assert_eq!(inactive, r#"<li>
+  <a href="/foo.html">Foo</a>
+</li>"#);
+    }
 }

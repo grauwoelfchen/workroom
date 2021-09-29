@@ -149,7 +149,7 @@ mod test {
         );
 
         let link = Link {
-            title: "Bar",
+            title: "Foo",
             href: "/foo.html",
         };
         let nav = build_nav("Bar", &link);

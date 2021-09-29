@@ -33,27 +33,24 @@ vet: vet\:check # Alias for vet:check
 .PHONY: vet
 
 # test
-test\:unit: # Run only unit tests
-	@cargo test --bins -- --nocapture
-.PHONY: test\:unit
+test\:debug: # Run unit tests with debug feature
+	@cargo test --features debug -- --nocapture
+.PHONY: test\:debug
 
-test\:doc: # Run only doc tests
-	@cargo test --doc
-.PHONY: test\:doc
-
-test\:all: test\:doc # Run all tests
-	@cargo test --bins -- --nocapture
-.PHONY: test\:all
-
-test: test\:unit # Alias ofr test:unit
+test: test\:debug # Alias for test:debug
 .PHONY: test
+
+test\:release: # Run unit tests without enabling debug feature
+	@cargo test -- --nocapture
+.PHONY: test\:release
+
 
 # build
 build\:debug: # Run packages [synonym: build]
-	cargo build
+	cargo build --features debug
 .PHONY: build\:debug
 
-build: build\:debug
+build: build\:debug # Alias for build:debug
 .PHONY: build
 
 build\:release: # Build packages with release mode

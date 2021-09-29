@@ -20,10 +20,15 @@ rustc 1.54.0 (a178d0322 2021-07-26)
 ```zsh
 % make
 % ./target/release/workroom
-
 % xdg-open dst/index.html
 ```
 
+```zsh
+# debug
+% make build:debug && ./target/debug/workroom && xdg-open ./dst/index.html
+# release
+% make build:release && ./target/release/workroom && xdg-open ./dst/index.html
+```
 
 ## License
 

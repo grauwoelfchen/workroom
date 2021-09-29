@@ -33,8 +33,8 @@ vet: vet\:check # Alias for vet:check
 .PHONY: vet
 
 # test
-test\:unit: # Run only unit tests for lib
-	@cargo test --lib --bins -- --nocapture
+test\:unit: # Run only unit tests
+	@cargo test --bins -- --nocapture
 .PHONY: test\:unit
 
 test\:doc: # Run only doc tests

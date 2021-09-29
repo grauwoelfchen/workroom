@@ -1,9 +1,9 @@
+use std::collections::BTreeMap;
 use std::fs;
 use std::io;
 use std::path::Path;
-use std::collections::BTreeMap;
 
-use handlebars::{Handlebars, no_escape};
+use handlebars::{no_escape, Handlebars};
 
 const SITE_TITLE: &str = "Grauwoelfchen's Workroom";
 const DST_DIR: &str = "./dst";
@@ -88,12 +88,11 @@ fn build_nav(heading: &str, link: (&str, &str)) -> String {
     } else {
         ""
     };
-    format!(r#"<li{}>
+    format!(
+        r#"<li{}>
   <a href="{}">{}</a>
 </li>"#,
-        class,
-        href,
-        title,
+        class, href, title,
     )
 }
 
@@ -122,13 +121,19 @@ mod test {
     #[test]
     fn test_build_nav() {
         let active = build_nav("Foo", ("Foo", "/foo.html"));
-        assert_eq!(active, r#"<li class="active">
+        assert_eq!(
+            active,
+            r#"<li class="active">
   <a href="/foo.html">Foo</a>
-</li>"#);
+</li>"#
+        );
 
         let inactive = build_nav("Bar", ("Foo", "/foo.html"));
-        assert_eq!(inactive, r#"<li>
+        assert_eq!(
+            inactive,
+            r#"<li>
   <a href="/foo.html">Foo</a>
-</li>"#);
+</li>"#
+        );
     }
 }

@@ -8,11 +8,23 @@ use handlebars::{no_escape, Handlebars};
 const SITE_TITLE: &str = "Grauwoelfchen's Workroom";
 const DST_DIR: &str = "./dst";
 
-const LINKS: [(&str, &str); 4] = [
-    ("Home", "/"),
-    ("About", "/about.html"),
-    ("Software", "/software.html"),
-    ("Link", "/link.html"),
+const LINKS: [Link; 4] = [
+    Link {
+        title: "Home",
+        href: "/",
+    },
+    Link {
+        title: "About",
+        href: "/about.html",
+    },
+    Link {
+        title: "Software",
+        href: "/software.html",
+    },
+    Link {
+        title: "Link",
+        href: "/link.html",
+    },
 ];
 
 #[derive(Debug)]
@@ -38,6 +50,11 @@ impl From<handlebars::RenderError> for Error {
     fn from(error: handlebars::RenderError) -> Self {
         Self::Render(error)
     }
+}
+
+struct Link {
+    pub title: &'static str,
+    pub href: &'static str,
 }
 
 fn main() -> Result<(), Error> {
@@ -79,11 +96,8 @@ fn main() -> Result<(), Error> {
 }
 
 /// Returns built an entry for navigations list.
-fn build_nav(heading: &str, link: (&str, &str)) -> String {
-    let title = link.0;
-    let href = link.1;
-
-    let class = if title == heading {
+fn build_nav(heading: &str, link: &Link) -> String {
+    let class = if link.title == heading {
         " class=\"active\""
     } else {
         ""
@@ -92,7 +106,7 @@ fn build_nav(heading: &str, link: (&str, &str)) -> String {
         r#"<li{}>
   <a href="{}">{}</a>
 </li>"#,
-        class, href, title,
+        class, link.href, link.title,
     )
 }
 
@@ -101,7 +115,7 @@ fn load(heading: &str, content: &str) -> BTreeMap<String, String> {
 
     let mut nav = "".to_string();
     for link in LINKS {
-        nav.push_str(&build_nav(heading, link));
+        nav.push_str(&build_nav(heading, &link));
     }
     data.insert("navi".to_string(), nav);
     data.insert("content".to_string(), content.to_string());
@@ -120,17 +134,25 @@ mod test {
 
     #[test]
     fn test_build_nav() {
-        let active = build_nav("Foo", ("Foo", "/foo.html"));
+        let link = Link {
+            title: "Foo",
+            href: "/foo.html",
+        };
+        let nav = build_nav("Foo", &link);
         assert_eq!(
-            active,
+            nav,
             r#"<li class="active">
   <a href="/foo.html">Foo</a>
 </li>"#
         );
 
-        let inactive = build_nav("Bar", ("Foo", "/foo.html"));
+        let link = Link {
+            title: "Bar",
+            href: "/foo.html",
+        };
+        let nav = build_nav("Bar", &link);
         assert_eq!(
-            inactive,
+            nav,
             r#"<li>
   <a href="/foo.html">Foo</a>
 </li>"#

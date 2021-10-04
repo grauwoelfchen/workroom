@@ -80,10 +80,9 @@ fn main() -> Result<(), Error> {
     let dat = include_str!("./error.hbs");
     fs::write(dst.join("error.html"), &dat.as_bytes())?;
 
+    // index
     let mut page_data = BTreeMap::new();
     page_data.insert("host".to_string(), HOST.to_string());
-
-    // index
     let page = reg.render_template(include_str!("./index.hbs"), &page_data)?;
     let mut data = load("Home", &page);
     data.append(&mut page_data);
@@ -91,13 +90,18 @@ fn main() -> Result<(), Error> {
     fs::write(dst.join("index.html"), result)?;
 
     // about
+    let mut page_data = BTreeMap::new();
+    page_data.insert("host".to_string(), HOST.to_string());
     let page = reg.render_template(include_str!("./about.hbs"), &page_data)?;
     let mut data = load("About", &page);
     data.append(&mut page_data);
+    dbg!(&data);
     let result = reg.render("layout", &data)?;
     fs::write(dst.join("about.html"), result)?;
 
     // software
+    let mut page_data = BTreeMap::new();
+    page_data.insert("host".to_string(), HOST.to_string());
     let page =
         reg.render_template(include_str!("./software.hbs"), &page_data)?;
     let mut data = load("Software", &page);
@@ -106,6 +110,8 @@ fn main() -> Result<(), Error> {
     fs::write(dst.join("software.html"), result)?;
 
     // link
+    let mut page_data = BTreeMap::new();
+    page_data.insert("host".to_string(), HOST.to_string());
     let page = reg.render_template(include_str!("./link.hbs"), &page_data)?;
     let mut data = load("Link", &page);
     data.append(&mut page_data);
@@ -124,8 +130,21 @@ fn build_nav(heading: &str, link: &Link) -> String {
     } else {
         ""
     };
-    let host = get_host();
-    let href = format!("{}{}", host, link.href);
+
+    #[cfg(not(feature = "debug"))]
+    let href = link.href.to_string();
+
+    #[cfg(feature = "debug")]
+    let href = format!(
+        "{}{}",
+        HOST.to_string(),
+        if link.href == "/" {
+            "/index.html"
+        } else {
+            link.href
+        }
+    );
+
     format!(
         r#"<li{}>
   <a href="{}">{}</a>

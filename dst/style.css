@@ -149,28 +149,3 @@ code {
     #footer #copyright .author {
       display: inline-block;
       margin-left: 0.21rem; }
-
-span.label {
-  display: inline-block;
-  border: 1px solid;
-  border-radius: 0.2rem;
-  padding: 0 0.64rem;
-  margin: 0 0 0 0.489rem; }
-  span.label.pypi {
-    border-color: #3d79aa;
-    background-color: #3d79aa; }
-  span.label.npm {
-    border-color: #cb0000;
-    background-color: #cb0000; }
-  span.label.gem {
-    border-color: #e9573f;
-    background-color: #e9573f; }
-  span.label a, span.label a:hover {
-    color: white !important; }
-  span.label a {
-    padding: 0;
-    margin: 0;
-    font-weight: bold;
-    font-size: 0.67em;
-    text-decoration: none;
-    vertical-align: 0.186em; }

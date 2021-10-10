@@ -95,7 +95,6 @@ fn main() -> Result<(), Error> {
     let page = reg.render_template(include_str!("./about.hbs"), &page_data)?;
     let mut data = load("About", &page);
     data.append(&mut page_data);
-    dbg!(&data);
     let result = reg.render("layout", &data)?;
     fs::write(dst.join("about.html"), result)?;
 

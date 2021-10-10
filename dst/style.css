@@ -5,7 +5,18 @@ body {
   line-height: 1.25;
   background-color: #ffffff;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
+
+.photo ul {
+  list-style: none;
+  margin: 0 0 2.3rem 0;
+  padding-left: 0;
+}
+
+.photo ul li {
+  display: inline;
+}
 
 img {
   vertical-align: middle;

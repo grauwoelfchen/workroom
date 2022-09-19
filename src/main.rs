@@ -15,7 +15,7 @@ lazy_static! {
     static ref HOST: String = get_host();
 }
 
-const SITE_TITLE: &str = "Grauwoelfchen's Workroom";
+const SITE_TITLE: &str = "Grauwölfchen's Workroom";
 const DST_DIR: &str = "./dst";
 
 const LINKS: [Link; 4] = [

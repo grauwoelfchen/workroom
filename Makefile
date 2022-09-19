@@ -59,7 +59,7 @@ build\:release: # Build packages with release mode
 
 # utility
 watch: # Start a process to watch (require cargo-watch)
-	cargo watch --exec 'run' --delay 0.3
+	cargo watch --exec 'run --features debug' --delay 0.3
 .PHONY: watch
 
 clean: # Remove built artifacts

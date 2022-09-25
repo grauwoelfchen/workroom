@@ -15,6 +15,13 @@ body {
   padding: 0;
 }
 
+.photo {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .photo ul {
   list-style: none;
   margin: 0 0 2.3rem 0;
@@ -125,16 +132,16 @@ p {
   text-decoration-color: #8c7756;
 }
 
-#content {
+#container {
   flex: 1;
   padding: 5px 18px;
 }
 
-#content .main {
+#container .content {
   margin-left: 1px;
 }
 
-#content h2 {
+#container h2 {
   width: 125px;
   color: #808080;
   border-bottom: 1px solid #111111;
@@ -142,7 +149,7 @@ p {
   margin: 13px 0 21px 0;
 }
 
-#content h3 {
+#container h3 {
   font-weight: bold;
   color: #808080;
   min-width: 125px;
@@ -152,7 +159,7 @@ p {
   margin: 19px 0 21px 0;
 }
 
-#content h4 {
+#container h4 {
   font-weight: normal;
   min-width: 105px;
   max-width: 30%;
@@ -160,58 +167,58 @@ p {
   margin: 15px 0 12px 0;
 }
 
-#content span.caption {
+#container span.caption {
   color: #808080;
   display: block;
   margin: 1px 2px 13px 2px;
   font-size: 0.8em;
 }
 
-#content ul.info {
+#container ul.info {
   padding-left: 0;
   list-style: none;
 }
 
-#content ul.info span {
+#container ul.info span {
   margin: 0 4px;
 }
 
-#content ul.note,
-#content ul.link {
+#container ul.note,
+#container ul.link {
   padding-left: 17px;
 }
 
-#content ul.note li ul,
-#content ul.link li ul {
+#container ul.note li ul,
+#container ul.link li ul {
   font-size: 0.9em;
   list-style: none;
   padding: 0;
   margin: 4px 0 9px 2px;
 }
 
-#content ul.note li code,
-#content ul.link li code {
+#container ul.note li code,
+#container ul.link li code {
   display: block;
   padding: 0.18rem 0;
   font-size: 0.8em;
   color: #888888;
 }
 
-#content ul.note li .url,
-#content ul.link li .url {
+#container ul.note li .url,
+#container ul.link li .url {
   display: inline-block;
   margin: 0 0 0 0.382rem;
   font-size: 0.8em;
   color: #838383;
 }
 
-#content ul.note li p,
-#content ul.link li p {
+#container ul.note li p,
+#container ul.link li p {
   padding: 0;
   margin: 1px 0;
 }
 
-#content ul.note {
+#container ul.note {
   margin: 4px 0;
 }
 

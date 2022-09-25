@@ -48,6 +48,10 @@ a:hover {
   color: #f3f3f3;
 }
 
+a:visited {
+  color: #6b6b99;
+}
+
 a::-moz-focus-inner {
   outline: 0;
 }
@@ -75,14 +79,14 @@ p {
 }
 
 #header {
-  border-bottom: 1px solid #080808;
-  padding-top: 6px;
+  border-bottom: 2px solid #b0956c;
+  padding: 0.96rem 0 1.12rem 0;
   background-color: #202020;
   width: 100%;
 }
 
 #header h1 {
-  color: #9d9d9d;
+  color: #b0956c;
   font-family: georgia, "bitstream vera serif", serif;
   font-size: 2.8em;
   font-weight: normal;
@@ -106,6 +110,19 @@ p {
   display: inline;
   list-style-type: none;
   padding: 0 1px;
+}
+
+#header ul.navi li a {
+  color: #d6d6d6;
+  text-decoration: underline;
+  text-decoration-color: #d6d6d6;
+}
+
+#header ul.navi li.active a,
+#header ul.navi li a:hover {
+  color: #9e8661;
+  text-decoration: underline;
+  text-decoration-color: #8c7756;
 }
 
 #content {
@@ -199,20 +216,29 @@ p {
 }
 
 #footer {
+  margin-top: 3rem;
+  padding: 1.23rem 0 1.31rem 0;
   width: 100%;
-  border-top: 1px solid #080808;
-  background-color: #202020;
+  color: #222222;
+  border-top: 6px solid #b0956c;
+  background-color: #6b6b99;
+}
+
+#footer a {
+  color: #f3f3f3;
+  text-decoration: underline;
+  text-decoration-color: #d6d6d6;
 }
 
 #footer #status,
 #footer #copyright {
   font-size: 0.85em;
-  padding: 13px 0 0 0;
+  padding: 16px 0 0 0;
   margin-left: 21px;
 }
 
 #footer #copyright {
-  padding-top: 7px;
+  padding-top: 13px;
   padding-bottom: 19px;
 }
 

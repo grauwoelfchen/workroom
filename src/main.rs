@@ -80,7 +80,7 @@ fn main() -> Result<(), Error> {
 
     // error
     let dat = include_str!("./error.hbs");
-    fs::write(dst.join("error.html"), &dat.as_bytes())?;
+    fs::write(dst.join("error.html"), dat.as_bytes())?;
 
     // index
     let mut page_data = BTreeMap::new();

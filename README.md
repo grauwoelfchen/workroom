@@ -76,7 +76,7 @@ See [LICENSE](LICENSE).
 
 ```
 Workroom
-Copyright (C) 2014-2022 Yasuhiro Яша Asaka
+Copyright (C) 2014-2023 Yasuhiro Яша Asaka
 ```
 
 

@@ -67,6 +67,8 @@ struct Link {
     pub href: &'static str,
 }
 
+// https://rust-lang.github.io/rust-clippy/master/index.html#result_large_err
+#[allow(clippy::result_large_err)]
 fn main() -> Result<(), Error> {
     let mut reg = Handlebars::new();
 

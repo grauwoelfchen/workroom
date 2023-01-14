@@ -1,4 +1,6 @@
 15 Jan 2023; Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>:
+	* Change the cover image in README.md
+	* Fix formatting issues (clippy warnings)
 	* Update SNS accounts and external links
 	* Update Copyright
 

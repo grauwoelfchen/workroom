@@ -2,9 +2,9 @@
 
 [![pipeline status][pipeline]][commit]
 
-[![Grauwoelfchen's Workroom][photo]][workroom]
+[![Grauwölfchen's Workroom][photo]][workroom]
 
-The website of [Grauwoelfchen's Wookroom][workroom].
+The website of [Grauwölfchen's Wookroom][workroom].
 
 
 ## Setup

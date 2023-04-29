@@ -85,6 +85,10 @@ p {
   margin-left: 0.06rem;
 }
 
+p span {
+  display: block;
+  margin: 0.18rem 0 2.13rem 0;}
+
 #header {
   border-bottom: 2px solid #b0956c;
   padding: 0.96rem 0 1.12rem 0;

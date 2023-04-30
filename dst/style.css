@@ -68,9 +68,18 @@ a.active {
   font-weight: bold;
 }
 
+a[href^="http"].download:after {
+  background: center right no-repeat;
+  font-size: 0.24rem;
+  content: '\2b07';
+  margin: 0;
+  padding: 0 0.21rem 0 0.19rem;
+}
+
+
 code,
 textarea {
-  font-family: "monaco", "andale mono", "bitstream vera sans mono";
+  font-family: monospace;
   font-weight: normal;
 }
 
@@ -87,7 +96,8 @@ p {
 
 p span {
   display: block;
-  margin: 0.18rem 0 2.13rem 0;}
+  margin: 0.18rem 0 2.13rem 0;
+}
 
 #header {
   border-bottom: 2px solid #b0956c;

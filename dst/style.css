@@ -91,12 +91,33 @@ code {
 }
 
 p {
-  margin-left: 0.06rem;
+  margin-left: 0.09rem;
 }
 
 p span {
   display: block;
   margin: 0.18rem 0 2.13rem 0;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto;
+  margin-left: 0.06rem;
+  padding: 0;
+}
+
+dl dt {
+  grid-column-start: 1;
+}
+
+dl dd {
+  grid-column-start: 2;
+  margin-left: 0.36rem;
+}
+
+dl dd code {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 #header {
@@ -188,18 +209,30 @@ p span {
   font-size: 0.8em;
 }
 
-#container ul.info {
-  padding-left: 0;
+ul {
   list-style: none;
+}
+
+#container ul.info li::before,
+#container ul.note li::before,
+#container ul.link li::before {
+  color: gray;
+  content: "\2022";
+  font-weight: bold;
+  display: inline-block;
+  width: 0.95rem;
+  margin-left: -0.81rem;
+}
+
+#container ul.note,
+#container ul.link,
+#container ul.info {
+  margin: 4px 0;
+  padding-left: 1.09rem;
 }
 
 #container ul.info span {
   margin: 0 4px;
-}
-
-#container ul.note,
-#container ul.link {
-  padding-left: 17px;
 }
 
 #container ul.note li ul,
@@ -230,10 +263,6 @@ p span {
 #container ul.link li p {
   padding: 0;
   margin: 1px 0;
-}
-
-#container ul.note {
-  margin: 4px 0;
 }
 
 #footer {
